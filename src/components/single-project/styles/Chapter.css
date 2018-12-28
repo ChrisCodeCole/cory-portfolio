@@ -1,3 +1,5 @@
 .Chapter-container {
     border: 5px solid red;
+    grid-column: 6 / 8;
+    grid-row: 1 / 2;
 }

@@ -1,3 +1,9 @@
 .ImageContainer-container {
     border: 5px solid red;
+    grid-column: 1 / 6;
+    grid-row: 2 / 6;
+    /* background-image: 'url("../../assets/CoryPictures/portaitOne.jpg")';
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
+    background-position: '50% 50%'; */
 }

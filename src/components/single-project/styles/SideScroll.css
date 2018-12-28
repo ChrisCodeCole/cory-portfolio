@@ -1,3 +1,5 @@
 .SideScroll-container {
     border: 5px solid red;
+    grid-column: 15 / 16;
+    grid-row: 2 / 5;
 }

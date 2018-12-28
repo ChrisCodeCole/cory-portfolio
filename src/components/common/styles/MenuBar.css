@@ -1,3 +1,5 @@
 .MenuBar-container {
     border: 5px solid red;
+    grid-column: 15 / 16;
+    grid-row: 1 / 2;
 }
