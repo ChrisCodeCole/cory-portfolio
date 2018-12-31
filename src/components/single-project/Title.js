@@ -4,7 +4,13 @@ import './styles/Title.css';
 const Title = () => {
   return (
     <div className="Title-container">
-      <h1>Title</h1>
+      <div className="Title-textContainer">
+        <h1 className="Title-mainText">Dope</h1>
+        <div className="Title-textDate">
+          <span className="Title-year">2018</span>
+          <span className="Title-initials">CB.</span>
+        </div>
+      </div>
     </div>
   )
 }

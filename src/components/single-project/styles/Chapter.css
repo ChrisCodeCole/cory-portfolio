@@ -1,5 +1,19 @@
 .Chapter-container {
-    border: 5px solid red;
     grid-column: 6 / 8;
     grid-row: 1 / 2;
+    text-align: left;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1em;
+}
+
+.Chapter-number {
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.Chapter-chapterText {
+
 }

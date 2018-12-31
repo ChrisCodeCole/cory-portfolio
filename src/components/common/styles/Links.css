@@ -1,5 +1,18 @@
 .Links-container {
-    border: 5px solid red;
     grid-column: 14 / 16;
     grid-row: 5 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.Links-shareText {
+    padding-right: 2rem;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+}
+
+.Links-shareAltIcon {
+    font-size: 1.2rem;
 }

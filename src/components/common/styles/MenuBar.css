@@ -1,5 +1,13 @@
 .MenuBar-container {
-    border: 5px solid red;
     grid-column: 15 / 16;
     grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+    margin-right: 2rem;
+}
+
+.MenuBar-menuBars {
+    font-size: 4rem;
 }

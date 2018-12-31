@@ -1,9 +1,31 @@
 .ImageContainer-container {
-    border: 5px solid red;
     grid-column: 1 / 6;
     grid-row: 2 / 6;
     /* background-image: 'url("../../assets/CoryPictures/portaitOne.jpg")';
     background-size: 'cover';
     background-repeat: 'no-repeat';
     background-position: '50% 50%'; */
+    position: relative;
+}
+
+.ImageContainer-selectedIndex {
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    right: 0;
+    position: absolute;
+    margin: 1rem;
+}
+
+.ImageContainer-selectorContainer {
+    position: absolute;
+    width: 100%;
+    bottom: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.ImageContainer-circle {
+    font-size: 4rem;
+    padding-right: 2.5rem;
 }

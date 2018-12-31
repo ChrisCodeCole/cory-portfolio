@@ -1,5 +1,35 @@
 .Title-container {
-    border: 5px solid red;
+    /* border: 5px solid red; */
     grid-column: 8 / 11;
     grid-row: 1 / 5;
+    align-self: center;
+}
+
+.Title-textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-90deg);
+    /* text-align: center; */
+}
+
+.Title-mainText {
+    display: inline-block;
+    flex-grow: 1;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.Title-textDate {
+    /* float: right; */
+    font-size: 1.5rem;
+    padding: 1em;
+    margin-top: 0.5em;
+}
+.Title-year {
+    display: block;
+    margin-bottom: 0.5em;
+}
+.Title-initials {
+    display: block;
 }

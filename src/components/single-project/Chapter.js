@@ -4,7 +4,8 @@ import './styles/Chapter.css';
 const Chapter = () => {
   return (
     <div className="Chapter-container">
-      <h1>Chapter</h1>
+      <span className="Chapter-number">02.</span>
+      <h2 className="Chapter-chapterText">IT'S !@#$%IN LITT</h2>
     </div>
   )
 }
