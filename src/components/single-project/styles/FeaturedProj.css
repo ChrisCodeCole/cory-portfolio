@@ -13,15 +13,16 @@
     flex-direction: column;
     justify-content: center;
     background-color: rgb(40, 33, 85);
+    padding-left: 3rem;
 }
 
 .FeaturedProj-featuredTitle {
     padding-bottom: 1rem;
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
 }
 
 .FeaturedProj-featuredDesc {
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
 }
 
 .FeaturedProj-projectsContainer {
@@ -31,16 +32,16 @@
     background-color: rgb(40, 33, 85);
     flex-direction: column;
     justify-content: center;
-
+    padding-left: 3rem;
 }
 
 .FeaturedProj-projectsTitle {
     padding-bottom: 1rem;
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
 }
 
 .FeaturedProj-projectsDesc {
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
 }
 
 .FeaturedProj-playContainer {

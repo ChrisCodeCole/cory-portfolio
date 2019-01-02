@@ -10,4 +10,5 @@
 
 .MenuBar-menuBars {
     font-size: 4rem;
+    cursor: pointer;
 }

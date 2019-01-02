@@ -1,0 +1,13 @@
+===========
+TO DO:
+1.Menu expansion
+    => links/content?
+        -contact
+        -bio
+        -social media links
+    => look and feel/animation of menu
+2. Ask Cory about branding, different name/image for this portfolio?
+3. Gallery Modal
+4. Multiple projects transition
+5. Research images and possible database integration
+===========

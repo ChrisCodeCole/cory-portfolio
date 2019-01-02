@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ProjectView from './components/views/ProjectView';
 import { library } from '@fortawesome/fontawesome-svg-core';

@@ -14,15 +14,36 @@ const imgStyle = {
 };
 
 export default class ImageContainer extends Component {
+  constructor(props){
+    super()
+
+    this.state = {
+      selectedIndex: 0,
+      imageList: ["imageOne","imageTwo","imageThree"]
+    }
+  }
+
+  changeSelectedIndex = (idx) => {
+    this.setState({ selectedIndex: idx });
+  }
 
   render() {
     return (
       <div className="ImageContainer-container" style={imgStyle}>
         <h3 className="ImageContainer-selectedIndex">05</h3>
         <div className="ImageContainer-selectorContainer">
-          <FontAwesomeIcon className="ImageContainer-circle" icon={['fas', 'circle']} />
+          {/* <FontAwesomeIcon className="ImageContainer-circle" icon={['fas', 'circle']} />
           <FontAwesomeIcon className="ImageContainer-circle" icon={['far', 'circle']} />
-          <FontAwesomeIcon className="ImageContainer-circle" icon={['far', 'circle']} />
+          <FontAwesomeIcon className="ImageContainer-circle" icon={['far', 'circle']} /> */}
+          {this.state.imageList.map((item, idx) => {
+              return(
+                this.state.selectedIndex === idx ? 
+                  <FontAwesomeIcon className="ImageContainer-circle" icon={['fas', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
+                  :
+                  <FontAwesomeIcon className="ImageContainer-circle" icon={['far', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
+              )
+          })
+        }
         </div>
         {/* <div className="ImageContainer-img" style={{imgStyle}}></div> */}
         {/* <img src={require("../../assets/CoryPictures/portaitOne.jpg")} alt="photo one" style={{ height: '100%', width: '100%' }}/> */}

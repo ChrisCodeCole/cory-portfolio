@@ -8,11 +8,13 @@
 }
 
 .Links-shareText {
-    padding-right: 2rem;
+    margin-right: 2rem;
     text-transform: capitalize;
     font-size: 0.8rem;
+    cursor: pointer;
 }
 
 .Links-shareAltIcon {
     font-size: 1.2rem;
+    cursor: pointer;
 }

@@ -23,9 +23,11 @@
     bottom: 5rem;
     display: flex;
     justify-content: center;
+    
 }
 
 .ImageContainer-circle {
-    font-size: 4rem;
-    padding-right: 2.5rem;
+    font-size: 1.5rem;
+    margin-right: 2.5rem;
+    cursor: pointer;
 }
