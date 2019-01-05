@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import './styles/ProjectView.css';
-import { Links, Logo, MenuBar } from '../common/index';
+import { Links, Logo, MenuBars, Menu } from '../common/index';
 import { Chapter, FeaturedProj, ImageContainer, SideScroll, Title } from '../single-project/index';
+import AppContext from '../../AppContext';
 
 
 export default class ProjectView extends Component {
   render() {
     return (
       <div className="ProjectView-container">
-        <Links />
-        <Logo /> 
-        <MenuBar />
-        <Chapter /> 
-        <FeaturedProj />
-        <ImageContainer />
-        <SideScroll />
-        <Title />
+        <AppContext.Provider value={{}}>
+          <Logo /> 
+          <MenuBars />
+          <Chapter /> 
+          <FeaturedProj />
+          <ImageContainer />
+          <SideScroll />
+          <Title />
+          <Menu />
+        </AppContext.Provider>
       </div>
     )
   }

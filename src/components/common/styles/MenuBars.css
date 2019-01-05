@@ -1,4 +1,4 @@
-.MenuBar-container {
+.MenuBars-container {
     grid-column: 15 / 16;
     grid-row: 1 / 2;
     display: flex;
@@ -8,7 +8,7 @@
     margin-right: 2rem;
 }
 
-.MenuBar-menuBars {
+.MenuBars-menuBars {
     font-size: 4rem;
     cursor: pointer;
 }

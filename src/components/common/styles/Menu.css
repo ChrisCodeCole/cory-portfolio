@@ -1,0 +1,9 @@
+.Menu-container {
+    grid-column: 11 / 16;
+    grid-row: 1 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 11%;
+    background-color: white;
+}
