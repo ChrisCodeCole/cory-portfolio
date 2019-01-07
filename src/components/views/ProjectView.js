@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import './styles/ProjectView.css';
 import { Links, Logo, MenuBars, Menu } from '../common/index';
 import { Chapter, FeaturedProj, ImageContainer, SideScroll, Title } from '../single-project/index';
-import AppContext from '../../AppContext';
 
 
 export default class ProjectView extends Component {
   render() {
     return (
       <div className="ProjectView-container">
-        <AppContext.Provider value={{}}>
           <Logo /> 
           <MenuBars />
           <Chapter /> 
@@ -18,7 +16,6 @@ export default class ProjectView extends Component {
           <SideScroll />
           <Title />
           <Menu />
-        </AppContext.Provider>
       </div>
     )
   }
