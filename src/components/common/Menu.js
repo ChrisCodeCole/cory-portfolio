@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './styles/Menu.css';
 import posed from 'react-pose';
+import { connectWithStore } from '../../store/AppContext';
+
 // import { faBars } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -10,7 +12,7 @@ const MenuContainer = posed.div({
         // delayChildren: 200,
         // staggerChildren: 50
     },
-    closed: { x: '-100%', delay: 300 }
+    closed: { x: '100%', delay: 300 }
 });
 // const Sidebar = posed.ul({
 //     open: {
@@ -49,15 +51,22 @@ const MenuContainer = posed.div({
 //     }
 //   }
   
-export default class Menu extends Component {
+class MenuUI extends Component {
   render() {
+    const { menuOpened } = this.props.state;
+    console.log(menuOpened);
     return (
-      <div className="Menu-container">
-        <h1>Contact</h1>
-        <h1>Contact</h1>
-        <h1>Contact</h1>
-        <h1>Contact</h1>
-      </div>
+      // <div className="Menu-container">
+        <MenuContainer className="Menu-container" pose={menuOpened ? 'open' : 'closed' }>
+          <h1>Contact</h1>
+          <h1>Contact</h1>
+          <h1>Contact</h1>
+          <h1>Contact</h1>
+        </MenuContainer>
+      // </div> 
     )
   }
 }
+
+const Menu = connectWithStore(MenuUI);
+export default Menu;

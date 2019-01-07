@@ -24,9 +24,9 @@ export default class SideScroll extends Component {
         {this.state.projectList.map((item, idx) => {
               return(
                 this.state.selectedIndex === idx ? 
-                  <FontAwesomeIcon className="SideScroll-circle" icon={['fas', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
+                  <FontAwesomeIcon key={idx} className="SideScroll-circle" icon={['fas', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
                   :
-                  <FontAwesomeIcon className="SideScroll-circle" icon={['far', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
+                  <FontAwesomeIcon key={idx} className="SideScroll-circle" icon={['far', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
               )
           })
         }

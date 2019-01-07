@@ -3,11 +3,20 @@ import React, { Component } from 'react';
 const Context = React.createContext();
 
 export class Provider extends Component {
+    constructor(){
+        super()
+
+        this.state = {
+            menuOpened: false        
+        }
+    }
+
     render() {
         return(
             <div>
                 <Context.Provider value={{
-
+                    state: {...this.state},
+                    onUpdateMenuOpened: () => { this.setState({ menuOpened: !this.state.menuOpened }) }
                 }}>
                     {this.props.children}
                 </Context.Provider>

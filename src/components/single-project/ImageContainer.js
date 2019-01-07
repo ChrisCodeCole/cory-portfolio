@@ -38,9 +38,9 @@ export default class ImageContainer extends Component {
           {this.state.imageList.map((item, idx) => {
               return(
                 this.state.selectedIndex === idx ? 
-                  <FontAwesomeIcon className="ImageContainer-circle" icon={['fas', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
+                  <FontAwesomeIcon key={idx} className="ImageContainer-circle" icon={['fas', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
                   :
-                  <FontAwesomeIcon className="ImageContainer-circle" icon={['far', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
+                  <FontAwesomeIcon key={idx} className="ImageContainer-circle" icon={['far', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
               )
           })
         }

@@ -6,6 +6,7 @@
     align-items: center;
     padding-bottom: 4rem;
     margin-right: 2rem;
+    z-index: 10;
 }
 
 .MenuBars-menuBars {

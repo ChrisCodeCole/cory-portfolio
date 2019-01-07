@@ -9,13 +9,13 @@ export default class ProjectView extends Component {
     return (
       <div className="ProjectView-container">
           <Logo /> 
-          <MenuBars />
           <Chapter /> 
           <FeaturedProj />
           <ImageContainer />
           <SideScroll />
           <Title />
           <Menu />
+          <MenuBars />
       </div>
     )
   }
