@@ -14,6 +14,7 @@ export default class ProjectView extends Component {
           <ImageContainer />
           <SideScroll />
           <Title />
+          <Links />
           <Menu />
           <MenuBars />
       </div>

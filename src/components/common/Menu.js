@@ -8,11 +8,20 @@ import { connectWithStore } from '../../store/AppContext';
 
 const MenuContainer = posed.div({
     open: {
-        x: '0%',
+      x: '0%',
+      transition:{
+        x: { ease: 'easeOut', duration: 300 }
+      }
+        // x: '0%',
         // delayChildren: 200,
         // staggerChildren: 50
     },
-    closed: { x: '100%', delay: 300 }
+    closed: { 
+      x: '100%',
+      transition:{
+        x: { ease: 'easeOut', duration: 300 }
+      }
+    }
 });
 // const Sidebar = posed.ul({
 //     open: {
@@ -58,10 +67,12 @@ class MenuUI extends Component {
     return (
       // <div className="Menu-container">
         <MenuContainer className="Menu-container" pose={menuOpened ? 'open' : 'closed' }>
-          <h1>Contact</h1>
-          <h1>Contact</h1>
-          <h1>Contact</h1>
-          <h1>Contact</h1>
+          <div className="Menu-flexContainer">
+            <h1>Weddings</h1>
+            <h1>Artists</h1>
+            <h1>Contact</h1>
+            <h1>Contact</h1>
+          </div>
         </MenuContainer>
       // </div> 
     )
