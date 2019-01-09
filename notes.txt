@@ -4,6 +4,8 @@ TO DO:
     => links/content?
         -contact
         -bio
+        -WeddingsPage
+        -ArtistsPage
         -social media links
     => look and feel/animation of menu
 2. Ask Cory about branding, different name/image for this portfolio?

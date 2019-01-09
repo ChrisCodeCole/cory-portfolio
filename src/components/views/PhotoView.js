@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import './styles/ProjectView.css';
-import { Links, Logo, MenuBars, Menu } from '../common/index';
-import { Chapter, FeaturedProj, ImageContainer, SideScroll, Title } from '../single-project/index';
+import './styles/PhotoView.css';
+import { Links, Logo, MenuBars, Menu, SideScroll } from '../common/index';
+import { Chapter, FeaturedProj, ImageContainer, Title } from '../photo_components/index';
 
 
-export default class ProjectView extends Component {
+export default class PhotoView extends Component {
   render() {
     return (
-      <div className="ProjectView-container">
+      <div className="PhotoView-container">
           <Logo /> 
           <Chapter /> 
           <FeaturedProj />
           <ImageContainer />
           <SideScroll />
           <Title />
-          <Links />
+          {/* <Links /> */}
           <Menu />
           <MenuBars />
       </div>
@@ -40,6 +40,6 @@ export default class ProjectView extends Component {
       Learn React
     </a>
   </header> 
-  <ProjectView />
+  <PhotoView />
 </div> */
 
