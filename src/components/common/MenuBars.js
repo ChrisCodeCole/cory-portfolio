@@ -7,20 +7,25 @@ import { connectWithStore } from '../../store/AppContext';
 
 const BarsContainer = posed.div({
   open: {
-    rotate: 90
+    rotateY: 180
   },
   closed: { 
-    rotate: 0
+    rotateY: 0
   }
 });
 
 class MenuBarsUI extends Component {
   render() {
     const { onUpdateMenuOpened } = this.props;
-    const { menuOpened } = this.props.state;
+    const { isMenuOpened } = this.props.state;
     return (
-      <BarsContainer className="MenuBars-container" pose={menuOpened ? 'open' : 'closed'}>
-        <FontAwesomeIcon onClick={() => onUpdateMenuOpened()} className="MenuBars-menuBars" icon={faBars} />
+      <BarsContainer className="MenuBars-container" pose={isMenuOpened ? 'open' : 'closed'}>
+      {isMenuOpened ? 
+              <span onClick={() => onUpdateMenuOpened()} className="MenuBars-menuBars">&#10006;</span>
+              : 
+              <FontAwesomeIcon onClick={() => onUpdateMenuOpened()} className="MenuBars-menuBars" icon={faBars} />
+
+      }
       </BarsContainer>
     )
   }

@@ -19,7 +19,6 @@ class App extends Component {
           <Route path="/contact" component={ContactView} />
           <Route path="/videos" component={VideoView} />
           <Route path="/weddings" component={WeddingsView} />
-          <PhotoView />
         </div>
       </Router>
     );

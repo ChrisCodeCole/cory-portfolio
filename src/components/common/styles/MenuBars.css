@@ -1,12 +1,17 @@
 .MenuBars-container {
-    grid-column: 15 / 16;
-    grid-row: 1 / 2;
+    /* grid-column: 15 / 16;
+    grid-row: 1 / 2; */
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 4rem;
     margin-right: 2rem;
     z-index: 10;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 15%;
+    height: 15%;
 }
 
 .MenuBars-menuBars {

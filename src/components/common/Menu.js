@@ -28,10 +28,9 @@ const MenuContainer = posed.div({
   
 class MenuUI extends Component {
   render() {
-    const { menuOpened } = this.props.state;
-    console.log(menuOpened);
+    const { isMenuOpened } = this.props.state;
     return (
-        <MenuContainer className="Menu-container" pose={menuOpened ? 'open' : 'closed' }>
+        <MenuContainer className="Menu-container" pose={isMenuOpened ? 'open' : 'closed' }>
           <div className="Menu-flexContainer">
             <a className="Menu-link" href="www.google.com">About Me</a>
             <a className="Menu-link" href="www.google.com">Weddings</a>

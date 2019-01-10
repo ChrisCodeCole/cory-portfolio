@@ -7,7 +7,8 @@ export class Provider extends Component {
         super()
 
         this.state = {
-            menuOpened: false        
+            isMenuOpened: false,
+            isPhotoWindowOpened: false,        
         }
     }
 
@@ -16,7 +17,8 @@ export class Provider extends Component {
             <div>
                 <Context.Provider value={{
                     state: {...this.state},
-                    onUpdateMenuOpened: () => { this.setState({ menuOpened: !this.state.menuOpened }) }
+                    onUpdateMenuOpened: () => { this.setState({ isMenuOpened: !this.state.isMenuOpened }) },
+                    onUpdatePhotoWindowOpened: () => { this.setState({ isPhotoWindowOpened: !this.state.isPhotoWindowOpened }) },
                 }}>
                     {this.props.children}
                 </Context.Provider>

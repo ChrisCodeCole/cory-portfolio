@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './styles/ImageContainer.css';
 import portrait from '../../assets/CoryPictures/spider-verse-miles2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { connectWithStore } from '../../store/AppContext';
 
 // Dynamically adding in images 
 const imgStyle = {
@@ -13,7 +14,7 @@ const imgStyle = {
     backgroundPosition: '50% 50%',
 };
 
-export default class ImageContainer extends Component {
+class ImageContainerUI extends Component {
   constructor(props){
     super()
 
@@ -28,8 +29,10 @@ export default class ImageContainer extends Component {
   }
 
   render() {
+    const { isPhotoWindowOpened } = this.props.state;
+    const { onUpdatePhotoWindowOpened } = this.props;
     return (
-      <div className="ImageContainer-container" style={imgStyle}>
+      <div onClick={(e) => onUpdatePhotoWindowOpened()} className="ImageContainer-container" style={imgStyle}>
         <h3 className="ImageContainer-selectedIndex">05</h3>
         <div className="ImageContainer-selectorContainer">
           {/* <FontAwesomeIcon className="ImageContainer-circle" icon={['fas', 'circle']} />
@@ -51,3 +54,6 @@ export default class ImageContainer extends Component {
     )
   }
 }
+
+const ImageContainer = connectWithStore(ImageContainerUI);
+export default ImageContainer;

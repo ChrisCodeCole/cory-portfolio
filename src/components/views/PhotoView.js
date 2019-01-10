@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/PhotoView.css';
-import { Links, Logo, MenuBars, Menu, SideScroll } from '../common/index';
+import { Links, Logo, MenuBars, Menu, SideScroll, SinglePhotoWindow } from '../common/index';
 import { Chapter, FeaturedProj, ImageContainer, Title } from '../photo_components/index';
 
 
@@ -8,6 +8,7 @@ export default class PhotoView extends Component {
   render() {
     return (
       <div className="PhotoView-container">
+          <SinglePhotoWindow />
           <Logo /> 
           <Chapter /> 
           <FeaturedProj />
