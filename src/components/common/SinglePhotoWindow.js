@@ -4,29 +4,16 @@ import posed from 'react-pose';
 import { connectWithStore } from '../../store/AppContext';
 import { faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import portrait from '../../assets/CoryPictures/spider-verse-miles3.jpg';
 
-// import { faBars } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// const MenuContainer = posed.div({
-//     open: {
-//       x: '0%',
-//       opacity: 1,
-//       transition:{
-//         x: { ease: 'easeOut', duration: 300 }
-//       }
-//         // x: '0%',
-//         // delayChildren: 200,
-//         // staggerChildren: 50
-//     },
-//     closed: { 
-//       x: '100%',
-//       opacity: 0,
-//       transition:{
-//         x: { ease: 'easeOut', duration: 300 }
-//       }
-//     }
-// });
+const imgStyle = {
+    width: '100%',
+    height: '100%',
+    backgroundImage: `url(${portrait})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '50% 50%',
+};
   
 class SinglePhotoWindowUI extends Component {
   render() {
@@ -43,8 +30,8 @@ class SinglePhotoWindowUI extends Component {
             }} 
             className="SinglePhotoWindow-FScontainer">
             <div className="SinglePhotoWindow-container">
-                Content
                 <FontAwesomeIcon onClick={() => console.log("left")} className="SinglePhotoWindow-arrowLeft" icon={faLongArrowAltLeft} />
+                <div className="SinglePhotoWindow-imageContainer" style={imgStyle}></div>
                 <FontAwesomeIcon onClick={() => console.log("right")} className="SinglePhotoWindow-arrowRight" icon={faLongArrowAltRight} />
             </div>
         </div>
