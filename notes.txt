@@ -1,15 +1,11 @@
 ===========
 TO DO:
-1.Menu expansion
-    => links/content?
-        -contact
-        -bio
-        -WeddingsPage
-        -ArtistsPage
-        -social media links
+1. Gallery Modal
+    =>onClick event to open/close this window
+    =>match design of adobe
+2. Menu expansion
     => look and feel/animation of menu
-2. Ask Cory about branding, different name/image for this portfolio?
-3. Gallery Modal
+3. Ask Cory about branding, different name/image for this portfolio?
 4. Multiple projects transition
 5. Research images and possible database integration
 ===========

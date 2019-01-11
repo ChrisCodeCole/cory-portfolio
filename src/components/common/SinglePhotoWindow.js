@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './styles/SinglePhotoWindow.css';
 import posed from 'react-pose';
 import { connectWithStore } from '../../store/AppContext';
+import { faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // import { faBars } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,9 +35,17 @@ class SinglePhotoWindowUI extends Component {
       console.log(isPhotoWindowOpened);
     return (
         isPhotoWindowOpened ?
-        <div onClick={(e) => onUpdatePhotoWindowOpened()} className="SinglePhotoWindow-FScontainer">
+        <div
+            ref={diveNode => this.diveNode = diveNode} 
+            onClick={(e) => {
+                if(e.target === this.diveNode)
+                    onUpdatePhotoWindowOpened()
+            }} 
+            className="SinglePhotoWindow-FScontainer">
             <div className="SinglePhotoWindow-container">
-                NO CONTENT
+                Content
+                <FontAwesomeIcon onClick={() => console.log("left")} className="SinglePhotoWindow-arrowLeft" icon={faLongArrowAltLeft} />
+                <FontAwesomeIcon onClick={() => console.log("right")} className="SinglePhotoWindow-arrowRight" icon={faLongArrowAltRight} />
             </div>
         </div>
         : 
