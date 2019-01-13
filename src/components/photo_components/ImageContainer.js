@@ -1,18 +1,12 @@
 import React, { Component } from 'react'
 import './styles/ImageContainer.css';
-import portrait from '../../assets/CoryPictures/spider-verse-miles2.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connectWithStore } from '../../store/AppContext';
 
-// Dynamically adding in images 
-const imgStyle = {
-    width: '100%',
-    height: '100%',
-    backgroundImage: `url(${portrait})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '50% 50%',
-};
+//helper function to place images in array
+function importAll(r) {
+  return r.keys().map(r);
+}
+export const images = importAll(require.context('../../assets/CoryPictures', false, /\.(png|jpe?g|svg)$/));
 
 class ImageContainerUI extends Component {
   constructor(props){
@@ -20,7 +14,6 @@ class ImageContainerUI extends Component {
 
     this.state = {
       selectedIndex: 0,
-      imageList: ["imageOne","imageTwo","imageThree"]
     }
   }
 
@@ -28,28 +21,20 @@ class ImageContainerUI extends Component {
     this.setState({ selectedIndex: idx });
   }
 
-  render() {
+render() {
     const { isPhotoWindowOpened } = this.props.state;
     const { onUpdatePhotoWindowOpened } = this.props;
     return (
-      <div onClick={(e) => onUpdatePhotoWindowOpened()} className="ImageContainer-container" style={imgStyle}>
-        <h3 className="ImageContainer-selectedIndex">05</h3>
-        <div className="ImageContainer-selectorContainer">
-          {/* <FontAwesomeIcon className="ImageContainer-circle" icon={['fas', 'circle']} />
-          <FontAwesomeIcon className="ImageContainer-circle" icon={['far', 'circle']} />
-          <FontAwesomeIcon className="ImageContainer-circle" icon={['far', 'circle']} /> */}
-          {this.state.imageList.map((item, idx) => {
-              return(
-                this.state.selectedIndex === idx ? 
-                  <FontAwesomeIcon key={idx} className="ImageContainer-circle" icon={['fas', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
-                  :
-                  <FontAwesomeIcon key={idx} className="ImageContainer-circle" icon={['far', 'circle']} onClick={(e) => this.changeSelectedIndex(idx)}/>
-              )
-          })
+      <div className="ImageContainer-container" >
+        {
+          images.map((image, index) => {
+            return(
+              <div onClick={(e) => onUpdatePhotoWindowOpened(index)} key={index} className="ImageContainer-imageWrapper" style={{ backgroundImage: `url(${image})` }}>
+
+              </div>
+            )}
+          )
         }
-        </div>
-        {/* <div className="ImageContainer-img" style={{imgStyle}}></div> */}
-        {/* <img src={require("../../assets/CoryPictures/portaitOne.jpg")} alt="photo one" style={{ height: '100%', width: '100%' }}/> */}
       </div>
     )
   }

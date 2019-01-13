@@ -9,3 +9,16 @@ TO DO:
 4. Multiple projects transition
 5. Research images and possible database integration
 ===========
+
+
+===========
+IMAGE IMPORTANT FUNC:
+
+function importAll(r) {
+    return r.keys().map(r);
+}
+
+export function pathToImport(path){
+    return importAll(require.context(path, false, /\.(png|jpe?g|svg)$/));
+}
+===========

@@ -4,40 +4,65 @@ import posed from 'react-pose';
 import { connectWithStore } from '../../store/AppContext';
 import { faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import portrait from '../../assets/CoryPictures/spider-verse-miles3.jpg';
+import { images } from '../photo_components/ImageContainer';
 
-const imgStyle = {
-    width: '100%',
-    height: '100%',
-    backgroundImage: `url(${portrait})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '50% 50%',
-};
   
 class SinglePhotoWindowUI extends Component {
-  render() {
-      const { isPhotoWindowOpened } = this.props.state;
-      const { onUpdatePhotoWindowOpened } = this.props;
-      console.log(isPhotoWindowOpened);
-    return (
-        isPhotoWindowOpened ?
-        <div
-            ref={diveNode => this.diveNode = diveNode} 
-            onClick={(e) => {
-                if(e.target === this.diveNode)
-                    onUpdatePhotoWindowOpened()
-            }} 
-            className="SinglePhotoWindow-FScontainer">
-            <div className="SinglePhotoWindow-container">
-                <FontAwesomeIcon onClick={() => console.log("left")} className="SinglePhotoWindow-arrowLeft" icon={faLongArrowAltLeft} />
-                <div className="SinglePhotoWindow-imageContainer" style={imgStyle}></div>
-                <FontAwesomeIcon onClick={() => console.log("right")} className="SinglePhotoWindow-arrowRight" icon={faLongArrowAltRight} />
+    constructor(props){
+    super(props);
+        this.state = {
+            focused: false
+        }
+        this.divNode = React.createRef();
+    }
+
+    componentDidMount(){
+        this.divNode.current.focus();
+    }
+
+    handleKeyPress = (e) => {
+        const { imageIndex } = this.props.state;
+        const { onChangeImageIndex } = this.props;
+        if(e.keyCode === 37)
+            onChangeImageIndex(images.length - 1, imageIndex - 1)
+        
+        if(e.keyCode == 39)
+            onChangeImageIndex(images.length - 1, imageIndex + 1)
+    }  
+
+    render() {
+        const { isPhotoWindowOpened, imageIndex } = this.props.state;
+        const { onUpdatePhotoWindowOpened, onChangeImageIndex } = this.props;
+        return (
+            isPhotoWindowOpened ?
+            <div
+                className="SinglePhotoWindow-FScontainer"
+                onKeyDown={(e) => this.handleKeyPress(e)}
+                ref={this.divNode} 
+                onClick={(e) => {
+                    if(e.target === this.divNode.current)
+                        onUpdatePhotoWindowOpened()
+                }} 
+                tabIndex={"0"}
+                autoFocus
+                >
+                <div className="SinglePhotoWindow-container">
+                    <FontAwesomeIcon 
+                        onClick={() => onChangeImageIndex(images.length - 1, imageIndex - 1)}
+                        className="SinglePhotoWindow-arrowLeft" 
+                        icon={faLongArrowAltLeft} 
+                        />
+                    <div className="SinglePhotoWindow-imageContainer" style={{ backgroundImage: `url(${images[imageIndex]})`}}></div>
+                    <FontAwesomeIcon 
+                        onClick={() => onChangeImageIndex(images.length - 1, imageIndex + 1)} 
+                        className="SinglePhotoWindow-arrowRight" 
+                        icon={faLongArrowAltRight} 
+                        />
+                </div>
             </div>
-        </div>
-        : 
-        null
-    )
+            : 
+            null
+        )
   }
 }
 

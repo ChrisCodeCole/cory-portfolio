@@ -8,8 +8,18 @@ export class Provider extends Component {
 
         this.state = {
             isMenuOpened: false,
-            isPhotoWindowOpened: false,        
+            isPhotoWindowOpened: false,  
+            imageIndex: 0      
         }
+    }
+
+    changeImageIndex = (lastIndex, idx) => {
+        if(idx < 0)
+            this.setState({ imageIndex: lastIndex })
+        else if(idx > lastIndex)
+            this.setState({ imageIndex: 0 })
+        else
+            this.setState({ imageIndex: idx })
     }
 
     render() {
@@ -18,7 +28,8 @@ export class Provider extends Component {
                 <Context.Provider value={{
                     state: {...this.state},
                     onUpdateMenuOpened: () => { this.setState({ isMenuOpened: !this.state.isMenuOpened }) },
-                    onUpdatePhotoWindowOpened: () => { this.setState({ isPhotoWindowOpened: !this.state.isPhotoWindowOpened }) },
+                    onUpdatePhotoWindowOpened: (idx) => { this.setState({ isPhotoWindowOpened: !this.state.isPhotoWindowOpened, imageIndex: idx }) },
+                    onChangeImageIndex: (arr, idx) => { this.changeImageIndex(arr, idx) },
                 }}>
                     {this.props.children}
                 </Context.Provider>
