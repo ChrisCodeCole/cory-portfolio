@@ -1,7 +1,9 @@
 .PhotoView-container {
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     display: grid;
+    border: 1px solid black;
     grid-template: repeat(5, 1fr) / repeat(15, 1fr);
     background-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(125,15,15,1), rgba(200,0,0,1));
 }

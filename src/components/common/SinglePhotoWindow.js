@@ -11,7 +11,7 @@ class SinglePhotoWindowUI extends Component {
     constructor(props){
     super(props);
         this.state = {
-            focused: false
+            focused: false,
         }
         this.divNode = React.createRef();
     }
@@ -23,9 +23,14 @@ class SinglePhotoWindowUI extends Component {
     handleKeyPress = (e) => {
         const { imageIndex } = this.props.state;
         const { onChangeImageIndex } = this.props;
-        if(e.keyCode === 37)
+        if(e.keyCode === 37){
+            const imgContainer = e.target.querySelector(".SinglePhotoWindow-imageContainer");
+            imgContainer.classList.remove("fade");
+            console.log("img class list remove", imgContainer.classList);
             onChangeImageIndex(images.length - 1, imageIndex - 1)
-        
+            imgContainer.classList.add("fade");
+            console.log("img class list", imgContainer.classList);
+        }
         if(e.keyCode == 39)
             onChangeImageIndex(images.length - 1, imageIndex + 1)
     }  

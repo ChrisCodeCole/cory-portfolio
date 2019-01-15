@@ -21,7 +21,7 @@ class PhotoViewUI extends Component {
           <ImageContainer />
           <SideScroll />
           <Title />
-          {/* <Links /> */}
+          <Links />
           <Menu />
           <MenuBars />
       </div>

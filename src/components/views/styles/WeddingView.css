@@ -1,0 +1,22 @@
+.WeddingView-container {
+    background-color: rgb(10, 10, 10);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(15, 1fr);
+}
+
+.WeddingView-titleContainer {
+    grid-column: 6 / 10;
+    grid-row: 1 / 2;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.WeddingView-title {
+    /* text-shadow: 3px 4px 5px; */
+}

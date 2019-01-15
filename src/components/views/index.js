@@ -1,15 +1,15 @@
-import ArtistsView from './ArtistsView';
+import ArtistView from './ArtistView';
 import BioView from './BioView';
 import ContactView from './ContactView';
 import PhotoView from './PhotoView';
 import VideoView from './VideoView';
-import WeddingsView from './WeddingsView';
+import WeddingView from './WeddingView';
 
 export {
-    ArtistsView,
+    ArtistView,
     BioView,
     ContactView,
     PhotoView,
     VideoView,
-    WeddingsView
+    WeddingView
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { PhotoView, BioView, ArtistsView, ContactView, VideoView, WeddingsView } from './components/views/index';
+import { PhotoView, BioView, ArtistView, ContactView, VideoView, WeddingView } from './components/views/index';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle as fasCircle } from '@fortawesome/free-solid-svg-icons';
@@ -15,10 +15,10 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={PhotoView} />
           <Route path="/photos" component={BioView} />
-          <Route path="/artists" component={ArtistsView} />
+          <Route path="/artists" component={ArtistView} />
           <Route path="/contact" component={ContactView} />
           <Route path="/videos" component={VideoView} />
-          <Route path="/weddings" component={WeddingsView} />
+          <Route path="/weddings" component={WeddingView} />
         </div>
       </Router>
     );

@@ -18,4 +18,32 @@
     padding: 2rem;
     transform: rotate(45deg);
     cursor: pointer;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.FeaturedProj-arrowDown:hover, .FeaturedProj-arrowDown:focus, .FeaturedProj-arrowDown:active{
+    animation-name: hvr-bob-float, hvr-bob;
+    animation-duration: .3s, 1.5s;
+    animation-delay: 0s, .3s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal, alternate;
+}
+
+@keyframes hvr-bob {
+    0% {
+        transform: translateY(-8px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-4px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(-8px) rotate(45deg);
+    }
+}
+@keyframes hvr-bob-float {
+    100% {
+    transform: translateY(-8px) rotate(45deg);
+    }
 }
