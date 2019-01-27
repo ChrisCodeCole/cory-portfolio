@@ -12,6 +12,10 @@ class WeddingViewUI extends Component {
           <h1 className="WeddingView-title">Weddings</h1>
         </div>
         <CardContainer />
+        <SideScroll />
+        <Links />
+        <Menu />
+        <MenuBars />
       </div>
     )
   }
