@@ -12,16 +12,16 @@ export default class CardContainer extends Component {
         super(props);
 
         this.state = {
-            hovered: false
+            hovered: -1
         }
     }
 
-    toggleHoverOn = () => {
-        this.setState({ hovered: true })
+    toggleHoverOn = (index) => {
+        this.setState({ hovered: index })
     }
 
     toggleHoverOff = () => {
-        this.setState({ hovered: false })
+        this.setState({ hovered: -1 })
     }
   render() {
     console.log("hover", this.state.hovered);
@@ -30,16 +30,20 @@ export default class CardContainer extends Component {
             {
                 images.map((image, index) => 
                     <div className="CardContainer-cardContainer">  
-                        <div onMouseEnter={this.toggleHoverOn} onMouseLeave={this.toggleHoverOff} className="CardContainer-card">
-                            <div className="CardContainer-cardOverlay">
-                                <div className="CardContainer-weddingPhoto" style={{ backgroundImage: `url(${image})` }}>
-                                    <span className="CardContainer-weddingText">Click to View</span>
-                                    <span className="CardContainer-weddingText">Photos &amp; Videos</span>
-                                </div>
-                                <div className="CardContainer-nameContainer">
-                                    <h2 className="CardContainer-couplesNames">Luis &amp; Elizabeth</h2>
-                                </div>
-                            </div>   
+                        <div className="CardContainer-card"
+                            onMouseEnter={(e) => this.toggleHoverOn(index)} 
+                            onMouseLeave={(e) => this.toggleHoverOff()}>
+                            <div className="CardContainer-weddingPhoto"
+                                style={this.state.hovered === index ? { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${image})`} : {backgroundImage: `url(${image})`}}>
+                                {this.state.hovered === index && <span className="CardContainer-weddingText">Click to View</span> }
+                                {this.state.hovered === index && <span className="CardContainer-weddingText">Photos &amp; Videos</span> }
+                            </div>
+                            <div className="CardContainer-nameContainer">
+                                <h2 className="CardContainer-couplesNames"
+                                    style={this.state.hovered === index ? {color: 'white'} : null }>
+                                    Luis &amp; Elizabeth
+                                </h2>
+                            </div>
                         </div>
                     </div>
                 )
